@@ -1,17 +1,15 @@
-package com.odinkirk.codecserver.controller.DTO;
+package com.odinkirk.codecserver.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Message {
-
-    private String originalMessage;
-    private String encodedMessage;
+public class EncodeRequest {
     private String codec;
+    private String message;
 }
