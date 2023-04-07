@@ -1,7 +1,7 @@
 package com.odinkirk.codecserver.controller;
 
-import com.odinkirk.codecserver.controller.DTO.EncodeRequest;
-import com.odinkirk.codecserver.controller.DTO.Message;
+import com.odinkirk.codecserver.model.EncodeRequest;
+import com.odinkirk.codecserver.model.Message;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
@@ -18,11 +18,11 @@ public class CodecControllerTest {
         String originalMessage = "Hello World";
         EncodeRequest encodeRequest = EncodeRequest.builder()
                 .codec("ROT13")
-                .originalMessage(originalMessage)
+                .message(originalMessage)
                 .build();
         Response response = codecController.encode(encodeRequest);
         Message responseMessage = (Message) response.getEntity();
         assertEquals(response.getStatus(), HttpStatus.OK.value());
-        assertEquals(originalMessage, responseMessage.getOriginalMessage());
+        assertEquals(originalMessage, responseMessage.getMessage());
     }
 }
