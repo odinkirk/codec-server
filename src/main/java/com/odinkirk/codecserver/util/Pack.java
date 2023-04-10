@@ -3,6 +3,10 @@ package com.odinkirk.codecserver.util;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used to represent a pack of things.
+ * @param <T> The type of thing in the pack.
+ */
 public final class Pack<T> {
 
     private final ArrayList<T> things;

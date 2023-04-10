@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * This class is used to represent a request to encode a message.
+ */
 @Builder
 @Data
 @NoArgsConstructor

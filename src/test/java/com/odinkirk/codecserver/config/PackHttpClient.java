@@ -12,6 +12,9 @@ import org.springframework.web.client.RestTemplate;
 
 import static io.cucumber.spring.CucumberTestContext.SCOPE_CUCUMBER_GLUE;
 
+/**
+ * This class is used to make HTTP requests to the application.
+ */
 @Component
 @Scope(SCOPE_CUCUMBER_GLUE)
 public class PackHttpClient {
@@ -24,14 +27,29 @@ public class PackHttpClient {
     private final RestTemplate restTemplate = new RestTemplate();
 
 
+    /**
+     * This method is used to build the endpoint for the application.
+     * @return the endpoint for the application.
+     */
     private String thingsEndpoint() {
-        return SERVER_URL + ":" + port + THINGS_ENDPOINT;
+        return serverLocation() + THINGS_ENDPOINT;
     }
 
+    /**
+     * This method is used to build the server location for the application.
+     * @return the server location for the application.
+     */
     private String serverLocation() {
         return SERVER_URL + ":" + port;
     }
 
+    /**
+     * This method is used to make a POST request to the application.
+     * @param payload The payload to send to the application.
+     * @param endpoint  The endpoint to send the request to.
+     * @return the status code of the response.
+     * @param <T> The type of the payload.
+     */
     public <T> int put(final T payload, final String endpoint) {
         int result = 0;
         HttpHeaders headers = new HttpHeaders();
@@ -44,10 +62,10 @@ public class PackHttpClient {
         return result;
     }
 
-    public int put(final String something) {
-        return restTemplate.postForEntity(thingsEndpoint(), something, Void.class).getStatusCodeValue();
-    }
-
+    /**
+     * This method is used to make a GET request to the application.
+     * @return the response from the application.
+     */
     public ResponseEntity<Pack<String>> getContents() {
         return restTemplate.exchange(thingsEndpoint(), HttpMethod.GET, null,
                 new ParameterizedTypeReference<Pack<String>>() {});

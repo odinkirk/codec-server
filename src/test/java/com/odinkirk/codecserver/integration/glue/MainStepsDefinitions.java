@@ -26,6 +26,9 @@ import static com.odinkirk.codecserver.DataTableConverter.fromDatatableToList;
 import static org.junit.Assert.assertEquals;
 
 
+/**
+ * This class is used to define the steps for the Cucumber tests.
+ */
 public class MainStepsDefinitions {
 
     private final String baseUrl = "http://localhost";

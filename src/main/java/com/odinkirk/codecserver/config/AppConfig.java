@@ -4,6 +4,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * This class is used to configure the Spring MVC application.
+ */
 @Configuration
 public class AppConfig extends WebMvcConfigurerAdapter {
 

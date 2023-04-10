@@ -6,6 +6,9 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 
+/**
+ * This class is used to run the Cucumber tests.
+ */
 @RunWith(Cucumber.class)
 @SpringBootTest(classes = {CodecServerApplication.class,
         CucumberTestRunner.class},

@@ -9,10 +9,16 @@ import javax.ws.rs.core.Response;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * This class is used to test the CodecController class.
+ */
 public class CodecControllerTest {
 
     private final CodecController codecController = new CodecController();
 
+    /**
+     * This method is used to test the encode method.
+     */
     @Test
     public void testEncode() {
         String originalMessage = "Hello World";
